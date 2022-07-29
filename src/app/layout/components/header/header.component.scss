@@ -1,0 +1,20 @@
+//colors
+@import "../../../../assets/styles/colors";
+.header {
+  background-color: $BgColor;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  &-wrapper {
+    display: flex;
+    padding: 15px;
+    .logo {
+      img {
+        width: 130px;
+        object-fit: cover;
+      }
+    }
+  }
+}

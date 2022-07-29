@@ -1,0 +1,10 @@
+<div class="product-list">
+  <div class="product-list-wrapper">
+      <p *ngIf="!products">Something Went Wrong !</p>
+      <div class="grid" *ngIf="products">
+        <div *ngFor="let product of products" class="product-wrapper">
+          <product-item [product]="product"></product-item>
+        </div>
+      </div>
+  </div>
+</div>

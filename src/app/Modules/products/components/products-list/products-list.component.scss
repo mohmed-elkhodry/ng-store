@@ -1,0 +1,14 @@
+.product-list {
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .product-wrapper {
+      width: 30%;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+//colors
+@import "../../../../assets/styles/colors";
+.footer-container {
+  background-color:$BgColor;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 25px;
+}
+.icons i {
+  margin-left: 10px;
+  font-size: 1.1rem;
+}

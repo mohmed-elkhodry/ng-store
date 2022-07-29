@@ -1,0 +1,13 @@
+<div class="prod-container" *ngIf="product">
+  <div class="prod-img">
+    <img [src]="product.image" alt="Product Image"/>
+  </div>
+  <h4 class="prod-name">{{ product.title }}</h4>
+  <p class="price">{{ product.price | currency }}</p>
+  <p-button
+    label="Details"
+    icon="pi pi-arrow-right"
+    iconPos="right"
+    [routerLink]="'/products/product/' + product.id"
+  ></p-button>
+</div>

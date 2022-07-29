@@ -1,0 +1,9 @@
+<div class="layout">
+  <header></header>
+  <div class="container">
+    <loading *ngIf="(uiSer.isLoading$) |async"></loading>
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer></footer>
+</div>

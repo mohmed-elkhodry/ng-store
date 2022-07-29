@@ -1,0 +1,114 @@
+<p-toast></p-toast>
+<div class="cata-container">
+  <div class="overlay" *ngIf="(uiSer.isLoading$ |async)">
+
+</div>
+  <p-card header="Add Product">
+    <div class="grid mb-2">
+      <div class="col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left"></div>
+          <div class="p-toolbar-group-right">
+            <p-button
+              styleClass="p-button-primary mr-2"
+              label="Create"
+              icon="pi pi-plus"
+              (click)="submit()"
+            ></p-button>
+            <p-button
+              styleClass="p-button-secondary"
+              label="Cancel"
+              icon="pi pi-times"
+              routerLink="/products"
+            ></p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <form [formGroup]="form">
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="name">Title</label>
+          <input
+            id="name"
+            type="text"
+            pInputText
+            class="w-full"
+            formControlName="title"
+          />
+          <small
+            class="p-error"
+            *ngIf="form.controls['title'].invalid && isSubmitted"
+            >Title is required</small
+          >
+        </div>
+
+        <div class="field col">
+          <label for="price" class="block">Price</label>
+          <p-inputNumber
+            mode="currency"
+            currency="USD"
+            locale="en-US"
+            formControlName="price"
+            inputId="price"
+            class="w-full"
+          ></p-inputNumber>
+          <small
+            class="p-error"
+            *ngIf="form.controls['price'].invalid && isSubmitted"
+            >Price is required</small
+          >
+        </div>
+      </div>
+      <div class="formgrid grid">
+        <div class="col field">
+          <label for="Catagory" class="block">Catagory</label>
+           <input
+            id="name"
+            type="text"
+            pInputText
+            class="w-full"
+            formControlName="category"
+          />
+          <small
+            class="p-error block"
+            *ngIf="form.controls['price'].invalid && isSubmitted"
+            >Catagory is required</small
+          >
+        </div>
+        <div class="field col-12">
+          <label for="describtion" class="block">Describtion</label>
+          <textarea
+            pInputTextarea
+            formControlName="description"
+            class="w-full"
+            [rows]="7"
+          ></textarea>
+          <small
+            class="p-error"
+            *ngIf="form.controls['description'].invalid && isSubmitted"
+            >Decribtion is required</small
+          >
+        </div>
+
+        <div class="field col-12">
+          <label for="main-image" class="block">Main Image</label>
+          <input
+            id="main-image"
+            pInputText
+            type="url"
+            formControlName="image"
+            style="width: 100%;"
+          />
+          <small
+            class="p-error block"
+            *ngIf="form.controls['description'].invalid && isSubmitted"
+            >Image is required</small
+          >
+        </div>
+      </div>
+    </form>
+  </p-card>
+</div>
+
+

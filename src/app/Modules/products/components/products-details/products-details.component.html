@@ -1,0 +1,28 @@
+<div class="prod-page" *ngIf="product">
+  <div class="grid">
+    <div class="md:col-6 sm:col-12 gallery">
+      <img [src]="product.image" alt="Product Image">
+    </div>
+    <div class="md:col-6 sm:col-12">
+      <div class="details">
+        <h2>{{ product.title }}</h2>
+        <p><b>Category:</b> {{product.category}}</p>
+        <p class="prod-des">
+          {{ product.description }}
+        </p>
+        <div class="prod-rating" *ngIf="product.rating">
+          <p-rating
+            [(ngModel)]="product.rating.rate"
+            [disabled]="true"
+            [cancel]="false"
+          ></p-rating>
+        </div>
+        <div class="prod-price">
+          {{ product.price | currency
+          }}
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
